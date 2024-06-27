@@ -1,0 +1,360 @@
+@charset "UTF-8";
+
+:root {
+    --cor1: #6D8F64;
+    --cor2: #02835E;
+    --cor3: #02935E;
+    --cor4: #03035E;
+    --cor5: #03135E;
+    
+    --fonte-padrão: arial;
+    --fonte-destaque: arial;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: #FAFAFA;
+}
+
+/* barra de menu */
+.cabecalho{
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    text-align: center;
+}
+
+.cabecalho-menu{
+    display: flex;
+    justify-content: space-around;
+    gap: 35px;
+    align-items: center;
+    height: 40px;
+    width: 720px;
+    background-color: var(--cor1);
+    border-radius: 15px;
+}
+
+.inicio, .como-descartar, .login {
+    font-size: 14px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-family: "Playfair Display", serif;
+    text-decoration: none
+}
+
+.login {
+    padding-left: 480px;
+    text-decoration: none
+}
+
+/* conteudo */
+.conteudo {
+    min-height: calc(100vh - 40px);
+    overflow: auto;
+}
+
+/* container principal */
+.container {
+    width: 470px;
+    height: 600px;
+    display: flex; 
+    margin: auto 35% auto; 
+    flex-direction: column;
+    box-sizing: border-box;
+    border: none;
+    padding: 15px;
+    align-items: center;
+    border-radius: 10px;
+    background-color: rgb(192, 192, 192, 0.3);
+}
+
+.opcoes {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    color: #626262;
+    font-size: 13px;
+}
+
+.opcoes label {
+    display: flex; 
+    margin-top: 3px;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.opcoes input[type="radio"] {
+    display: none; /* Oculta o botão de rádio padrão */
+}
+  
+/* Estilizando a aparência do botão de rádio */
+.opcoes input[type="radio"] + label:before {
+    content: ''; 
+    display: inline-block; 
+    width: 23px; 
+    height: 15px; 
+    border-radius: 10px;
+    border: 2px solid #999;
+    margin-right: 10px; 
+}
+  
+/* Estilizando a aparência do botão de rádio quando selecionado */
+.opcoes input[type="radio"]:checked + label:before {
+    background-color: #414B3B; 
+    border-color: #414B3B; 
+}
+
+.inputs input {
+    display: block;
+    margin-bottom: 10px;
+    width: 50%;
+    padding: 5px;
+    border: 1px solid;
+    border-color: rgb(109, 143, 100, 0.4);
+    box-sizing: border-box;
+    border-radius: 10px;
+    text-align: center;
+    background-color: rgb(109, 143, 100, 0.4);
+    margin-right: 5px;
+}
+
+.inputs input::placeholder {
+    color: #FFFFFF;
+    font-size: 10px;
+}
+
+fieldset {
+    width: 100%; /* Ajustar largura para 100% do contêiner */
+    max-width: 400px; /* Definir uma largura máxima */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 6px;/* Ajustar padding */
+    border-radius: 5px;
+    border: 1px solid rgba(109, 143, 100, 0.4);
+    color: #626262;   
+    margin-right: 5px; 
+    font-size: 14px; 
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1px;
+
+}
+
+.input-container label {
+    width: 20%;
+    text-align: right;
+    padding-right: 5px; /* Ajustando o espaçamento direito */
+    margin-bottom: 10px;
+    font-size: 13px;
+    margin-right: 5px; /* Ajustando a margem direita */
+}
+
+.input-container span {
+    color: red;
+    margin-left: 5px;
+}
+
+.input-container input {
+    width: 80%;
+    margin-left: 10px; /* Ajustando a margem esquerda */
+}
+
+/* Especificar a largura dos inputs */
+#numero {
+    width: 20%;
+    margin-right: 10px;
+}
+
+#bairro {
+    width: 50%;
+    margin-left: 10px;
+}
+
+.input-container label[for="numero"] {
+margin-left: 16px;
+}
+
+.mensagem {
+    color: black; /* Defina a cor da mensagem aqui */
+    font-size: 13px;
+    margin-right: 40%;
+    margin-block-start: -17px;
+    
+}
+
+.asterisco {
+    color: red; /* Defina a cor do asterisco aqui */
+    margin-right: 90%;
+    margin-top: 5px;
+    
+}
+
+
+.botoes button[type="submit"] {
+    width: 54px;
+    height: 26px;
+    background-color: #52724A; 
+    border: none; 
+    color: white; 
+    text-align: center; 
+    text-decoration: none; 
+    font-size: 14px; 
+    margin: 4px 2px; 
+    cursor: pointer;
+    border-radius: 5px; 
+    margin-left: 185px;
+    margin-bottom: 5px; /* Adicionando margem superior para mover os botões para baixo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Estilizando o botão de tipo 'button' */
+  .botoes button[type="button"] {
+    width: 65px;
+    height: 26px;
+    background-color: #983939; 
+    border: none; 
+    color: white; 
+    text-align: center;
+    text-decoration: none; 
+    font-size: 14px; 
+    margin: 4px 2px; 
+    cursor: pointer;
+    border-radius: 5px; 
+    margin-left: 250px;
+    margin-top: -31px; /*Adicionando margem superior para mover os botões para baixo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Estilos do pop-up */
+.popupContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro semi-transparente */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.popupContent {
+    background-color: #ffffff; /* Cor de fundo do pop-up */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5); /* Sombra */
+}
+
+/* Estilos para o botão Fechar */
+#btnFecharPopup {
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: #6D8F64; /* Cor do botão */
+    color: #ffffff; /* Cor do texto do botão */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#btnFecharPopup:hover {
+    background-color: rgb(109, 143, 100, 0.7);; /* Mudança de cor ao passar o mouse */
+}
+
+.txt-nova-conta {
+    position: fixed;
+    top: 10%; 
+    left: 19%; 
+    padding: 20px;
+    color: #414B3B; 
+    font-size: 34px;
+    font-weight: bold;
+}
+
+.logo-folhas1, .logo-detalhes1, .logo-folhas2, .logo-detalhes2 {
+    position: absolute;
+    z-index: -1;
+}
+
+.logo-folhas1, .logo-folhas2 {
+    width: 176px;
+    opacity: 0.6;
+}
+
+.logo-detalhes1, .logo-detalhes2 {
+    width: 139px;
+}
+
+.logo-folhas1 {
+    top: 25%;
+    right: 68%;
+}
+
+.logo-detalhes1 {
+    top: 32%;
+    right: 66%;
+}
+
+.logo-folhas2 {
+    top: 55%;
+    right: 62%;
+    transform: rotate(-45deg);
+}
+
+.logo-detalhes2 {
+    top: 65%;
+    right: 65%;
+    transform: rotate(-45deg);
+}
+
+/* rodape */
+.rodape {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor1);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 40px; 
+}
+
+.rodape-texto {
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-family: "Playfair Display", serif;
+}
+
+.rodape-img {
+    position: absolute;
+    padding-bottom: 4%;
+    width: 40px;
+    height: 35px;
+}
+
+.modoEdicao {
+    background-color: #ffffff !important;
+    color: #312f2f00 !important;
+}
+
+.servico input, .servico textarea {
+    background-color: #C0C0C0;
+    color: #727070;
+}

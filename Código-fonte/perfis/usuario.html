@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../perfis/style-perfis.css">
+    <link rel="shortcut icon" href="../logos/favicon.png" type="image/x-icon">
+    <title>Perfil</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+    </style>
+</head>
+<body>
+    <header class="cabecalho">
+        <nav  class="cabecalho-menu">
+            <a href="../home/home-cliente.html" class="inicio">Início</a>
+            <a href="../material/materiais.html" class="como-descartar">Como <br />Descartar</a>
+            <a href="../minhas_coletas_cliente/minhas-coletas.html" class="como-descartar">Minhas <br />Coletas</a>
+            <a href="../perfis/usuario.html" class="como-descartar" style="color: #414B3B;">Perfil</a>
+            <a href="../login/login-teste.html" class="login">Sair</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <div class="conteudo-perfil">
+                <div class="perfil-completo">
+                    <div id="perfil">
+                        <h1>Perfil</h1>
+                        <div id="icone-perfil">
+                            <img src="../imgs/user.png" alt="">
+                        </div>                 
+                    </div>
+                    <div class="descricao-perfil">
+                        <span>Aqui você pode <b>editar suas informações</b> pessoais, <b>alterar sua senha</b> de
+                             acesso ao sistema, ou excluir a sua conta permanentemente.</span>
+                    </div>
+                </div>
+                
+                <div id="card-infos">
+                    <div id="formulario">
+                        <label for="nome">Nome:<span>*</span></label>
+                        <input type="text" name="Nome" id="nome" placeholder="Nome completo" style="width: 90%;" disabled>
+                        <label for="cpf">CPF:<span>*</span></label>
+                        <input type="text" name="CPF" id="cpf" placeholder="CPF" style="width: 90%;" disabled>
+                        <label for="email">E-mail:<span>*</span></label>
+                        <input type="email" name="E-mail" id="email" placeholder="E-mail" style="width: 90%;" disabled>
+                        <label for="telefone">Telefone:<span>*</span></label>
+                        <input type="text" name="Telefone" id="telefone" placeholder="Telefone" style="width: 90%;" disabled>
+                        <label for="cidade">Cidade:<span>*</span></label>
+                        <input type="text" name="Cidade" id="cidade" placeholder="Cidade" style="width: 90%;" disabled>
+                    
+                        <p><span>*</span> Campos de preenchimento obrigatório.</p>
+                    </div>
+                    <div>
+                        <button type="button" id="alterar-senha">Alterar senha</button>
+                    </div>
+                    <div id="botoes-formulario">
+                        <button type="button" id="editar">Editar</button>
+                        <button type="button" id="excluir" onclick="abreConfirmacao()">Excluir</button>
+                    </div>
+                </div>
+                <div id="card-confirmacao">
+                    <div></div>
+                    <div id="confirmacao" class="hidden">
+                        <p>Confirma a exclusão da conta? Todos os dados serão perdidos.</p>
+                        <div>
+                            <button type="button" id="cancelar-exclusao" class="editar" onClick="fecharConfirmacao()">Cancelar</button>
+                            <button type="button" id="confirmar-exclusao" class="excluir">Excluir</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+    
+    <footer class="rodape">
+        <p class="rodape-texto">Recicle.me</p>
+        <img class="rodape-img" src="../logos/logosvg.svg" alt="LogoRecicleME">
+    </footer>
+
+    <div id="fundo-modal" class="hidden" onClick="fecharConfirmacao()"></div>
+
+    <script src="usuario.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    carregarDados();
+    
+    document.getElementById('editar').addEventListener('click', habilitaEdicao);
+    document.getElementById('confirmar-exclusao').addEventListener('click', exclusaoDados);
+});
+
+function carregarDados() {
+    const cliente = JSON.parse(localStorage.getItem('usuario'));
+
+    if (cliente) {
+        document.getElementById("nome").value = cliente.nome || "";
+        document.getElementById("cpf").value = cliente.cpf || "";
+        document.getElementById("email").value = cliente.email || "";
+        document.getElementById("telefone").value = cliente.telefone || "";
+        document.getElementById("cidade").value = cliente.cidade || "";
+    }
+}
+
+function habilitaEdicao() {
+    const editarButton = document.getElementById('editar');
+
+    if (editarButton.innerText === "Editar") {
+        document.getElementById('nome').disabled = false;
+        document.getElementById('cpf').disabled = false;
+        document.getElementById('email').disabled = false;
+        document.getElementById('telefone').disabled = false;
+        document.getElementById('cidade').disabled = false;
+
+        editarButton.innerText = "Salvar";
+
+        document.getElementById('nome').classList.add("modoEdicao");
+        document.getElementById('cpf').classList.add("modoEdicao");
+        document.getElementById('email').classList.add("modoEdicao");
+        document.getElementById('telefone').classList.add("modoEdicao");
+        document.getElementById('cidade').classList.add("modoEdicao");
+
+        // Adiciona o evento de clique para salvar os dados
+        editarButton.addEventListener('click', salvarDados);
+    } else {
+        salvarDados();
+        document.getElementById('nome').disabled = true;
+        document.getElementById('cpf').disabled = true;
+        document.getElementById('email').disabled = true;
+        document.getElementById('telefone').disabled = true;
+        document.getElementById('cidade').disabled = true;
+
+        editarButton.innerText = "Editar";
+
+        document.getElementById('nome').classList.remove("modoEdicao");
+        document.getElementById('cpf').classList.remove("modoEdicao");
+        document.getElementById('email').classList.remove("modoEdicao");
+        document.getElementById('telefone').classList.remove("modoEdicao");
+        document.getElementById('cidade').classList.remove("modoEdicao");
+    }
+}
+
+function exclusaoDados() {
+    localStorage.removeItem("usuario");
+    alert("Conta excluída com sucesso!");
+    window.location.href = '../login/login-teste.html';
+}
+
+function salvarDados() {
+    var nome = document.getElementById("nome").value;
+    var cpf = document.getElementById("cpf").value;
+    var email = document.getElementById("email").value;
+    var telefone = document.getElementById("telefone").value;
+    var cidade = document.getElementById("cidade").value;
+
+    localStorage.setItem("usuario", JSON.stringify({
+        nome: nome,
+        cpf: cpf,
+        email: email,
+        telefone: telefone,
+        cidade: cidade
+    }));
+
+    // Desabilitar os campos após salvar
+    /*document.getElementById('nome').disabled = true;
+    document.getElementById('cpf').disabled = true;
+    document.getElementById('email').disabled = true;
+    document.getElementById('telefone').disabled = true;
+    document.getElementById('cidade').disabled = true;*/
+
+    // Alterar o texto do botão de volta para "Editar"
+    /*document.getElementById('editar').innerText = "Editar";
+
+    // Remover a classe de modo edição
+    document.getElementById('nome').classList.remove("modoEdicao");
+    document.getElementById('cpf').classList.remove("modoEdicao");
+    document.getElementById('email').classList.remove("modoEdicao");
+    document.getElementById('telefone').classList.remove("modoEdicao");
+    document.getElementById('cidade').classList.remove("modoEdicao");*/
+}
+
+function abreConfirmacao() {
+    document.getElementById('fundo-modal').classList.remove('hidden');
+    document.getElementById('confirmacao').classList.remove('hidden');
+}
+
+function fecharConfirmacao() {
+    document.getElementById('fundo-modal').classList.add('hidden');
+    document.getElementById('confirmacao').classList.add('hidden');
+}
+
+    </script>
+
+
+</body>
+</html>
+
+    

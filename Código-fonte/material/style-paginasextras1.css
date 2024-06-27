@@ -1,0 +1,124 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+
+:root {
+    --cor1: #6D8F64;
+    --cor2: #62996B;
+    --cor3: #b34d4d;
+    --cor4: #7487bb;
+    --cor5: #e7e36f;
+    --cor6: #CE925A;
+
+    --fonte-destaque: "Playfair Display", serif;
+    --fonte-padrao: arial"Inter", sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: var(--fonte-padrao);
+}
+
+main{
+    width: 100vw;
+    height: 100vh;
+}
+
+.titulo1{
+    background-color: var(--cor5);
+    padding: 10px 20px;
+    font-size: 26px;
+    font-family: var(--fonte-destaque);
+}
+
+.titulo2{
+    padding: 10px;
+}
+
+.coluna{
+    width: 97vw;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+.container-coletor {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 25px;
+    margin-bottom: 30px;
+    padding-top: 10px;
+}
+
+p.text-comum{
+    font-size: 20px;
+}
+
+.bloco {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+}
+
+.bloco > h3{
+    font-family: var(--fonte-destaque);
+    font-size: 22px;
+}
+
+.bl-conteudo > h3, p {
+    padding: 7px;
+}
+
+.inform-coletor {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 8px;
+    margin-top: 10px;
+}
+
+.icon-inform,
+.icon-contact {
+    text-align: center;
+}
+
+.icon-contact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.button-agenda {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 17px;
+    margin-top: 20px;
+    text-align: center;
+    height: 40px;
+}
+
+.button-agenda a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.button-agenda:hover {
+    background-color: #3e8e41;
+}
+

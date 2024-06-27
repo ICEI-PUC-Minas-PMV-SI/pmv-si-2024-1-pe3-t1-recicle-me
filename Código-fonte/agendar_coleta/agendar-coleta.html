@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="agendar-coleta.css">
+    <link rel="shortcut icon" href="../logos/favicon.png" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="agendar-coleta.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap">
+    <title>Agendar Coleta</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+    </style>
+
+</head>
+<body>
+    <header class="cabecalho">
+        <nav  class="cabecalho-menu">
+            <a href="../home/home-cliente.html" class="como-descartar">Início</a>
+            <a href="../material/materiais.html" class="como-descartar">Como <br />Descartar</a>
+            <a href="../agendar_coleta/agendar-coleta.html" class="como-descartar" style="color: #414B3B;">Agendar </br> Coleta</a>
+            <a href="../minhas_coletas_cliente/minhas-coletas.html" class="como-descartar">Minhas </br> Coletas</a>
+            <a href="../perfis/usuario.html" class="login">Perfil</a>
+            <a href="../login/login-teste.html" class="login">Sair</a>
+        </nav>
+
+    </header>
+
+    <main>
+        <section class="espaço">
+            <div class="agendar-coleta-logo">
+                <p>Agendar </br>Coleta <img class="relogio" src="../imgs/logo1.png" alt="logorelogio"></p>
+            </div>
+
+            <div> </div>
+                <div class="caixa1"> 
+                    <div class="numero-coleta">
+                            <label class="linha">Coleta Número: 2222</label>
+                    </div>
+                        <div class="formulario">
+                            <div class="linha">
+                                <label for="nome">Categoria:</label>
+                                <input type="text" id="nome" name="nome" placeholder="Metal" disabled>
+                            </div>
+                            <div class="linha">
+                                <div class="linha">
+                                    <label for="produtos">Produto <span class="vermelho">*</span>:</label>
+                                    <input type="text" id="produto" name="produto" placeholder="Alumínio">
+                                </div>
+                                <div class="linha">
+                                    <div class="linha">
+                                        <label for="data">Data <span class="vermelho">*</span>:</label>
+                                        <input type="date" id="data" name="data" class="input-custom">
+                                    </div>     
+                                    <div class="linha">
+                                        <label for="horario">Horário <span class="vermelho">*</span>:</label>
+                                        <input type="text" id="horario" name="horario" class="input-custom" placeholder="HH:MM">
+                                    </div>
+                                    <div class="linha">
+                                        <label for="produtos">Coletor:</label>
+                                        <input type="text" id="coletor" name="coletor" placeholder="Metal BH Reciclagem" disabled>
+                                    </div> 
+                                    <div class="linha">
+                                        <label for="entrega">Entrega <span class="vermelho">*</span>:</label>
+                                        <div class="entrega-buttons">
+                                            <button id="recolher-btn" class="recolher-btn">Recolher</button>
+                                            <button id="entregar-btn" class="entrega-btn">Entregar</button>
+                                        
+                                        </div>
+                                        <div class="linha-local">
+                                            <label class="local" for="horario">Local <span class="vermelho">*</span>:</label>
+                                            <input type="text" id="local" name="local" placeholder="Rua, n, Bairro, Belo Horizonte - MG">
+                                        </div>
+                                        <div class="tooltip">
+                                            <p>?</p>
+                                            <span class="tooltiptext">
+                                                <h1>Apenas uma escolha</h1> </br>
+                                                <h2>Recolher:</br>
+                                                 - O coletor deverá ir até sua residência recolher o seu material.</h2> </br>
+                                                <h3>Entregar: <br/>
+                                                - Você deverá se encontrar com o coletor, no endereço indicado,
+                                                para a entrega do material.</h3>
+                                            </span>
+                                        </div>
+                                        <div class="obrigatorio">
+                                            <p><span class="vermelho">*</span>Campos de preenchimento obrigatório</p>
+                                        </div>
+                                        <div class="agendar-cancelar-buttons">
+                                            <button id="agendar-btn" class="agendar-btn">Agendar</button>
+                                            <button id="cancelar-btn" class="agendar-btn">Cancelar</button>
+                                        </div>
+                                    </div>                     
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="cover">
+            <div class="popup">
+                    <h1>Aviso</h1> </br>
+                    <p>Todos os dados foram preenchidos,
+                    deseja continuar?
+                    </p>
+                        <div class="popup-btn">
+                            <button class="btn-editar"> Editar </button>
+                            <button class="btn-confirmar"> Continuar </button>
+                        </div>
+            </div>
+        </div>
+
+        </section>
+
+    </main>
+    
+    <footer class="rodape">
+        <p class="rodape-texto">Recicle.me</p>
+        <img class="rodape-img"  src="../logos/logosvg.svg" alt="LogoRecicleME">
+    </footer>
+</body>
+</html>

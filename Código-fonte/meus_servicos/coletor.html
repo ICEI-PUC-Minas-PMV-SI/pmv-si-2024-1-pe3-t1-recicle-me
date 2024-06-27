@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../meus_servicos/styles/style-servicos-coletor.css">
+    <link rel="shortcut icon" href="../logos/favicon.png" type="image/x-icon">
+    <title>Meus Serviços</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+    </style>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <nav class="cabecalho-menu">
+            <a href="../home/home-coletor.html" class="inicio">Início</a>
+            <a href="../material/materiais-coletor.html" class="como-descartar">Como <br />Descartar</a>
+            <a href="../meus_servicos/coletor.html" class="como-descartar" style="color: #414B3B;">Meus Serviços</a>
+            <a href="../minhas_coletas/coletor.html" class="como-descartar">Minhas Coletas</a>
+            <a href="../perfis/coletor.html" class="como-descartar">Perfil</a>
+            <a href="../login/login-teste.html" class="login">Sair</a>
+        </nav>
+
+    </header>
+
+    <main>
+        <div id="perfil">
+            <h1>Meus <br>Serviços</h1>
+        </div>
+        <section class="cadastro">
+            <form id="card-servico">
+                <h3>Cadastre seu serviço</h3>
+                <div class="campos-forms">
+                    <label for="horarioAtendimento">Dia e Horário<span>*</span></label>
+                    <input type="text" name="horario" id="horarioAtendimento"
+                        placeholder="Exemplo: Seg-Sex: 7:00 às 11:00" required>
+                </div>
+                <div class="campos-forms">
+                    <label for="categoria">Categoria de material<span>*</span></label>
+                    <select name="categoria" id="categoria" required>
+                        <option value="">Selecione...</option>
+                        <option value="Plástico">Plástico</option>
+                        <option value="Vidro">Vidro</option>
+                        <option value="Papel">Papel</option>
+                        <option value="Metal">Metal</option>
+                        <option value="Orgânico">Orgânico</option>
+                    </select>
+                </div>
+                <div class="campos-forms">
+                    <label>Tipo de entrega<span>*</span></label>
+                    <div id="escolher-entrega">
+                        <input type="checkbox" name="entrega" id="recolher">
+                        <label for="entrega" style="width: 31%;">Recolher em domicílio</label>
+
+                        <input type="checkbox" name="entrega" id="receber">
+                        <label for="entrega" style="width: 27%;">Receber no local</label>
+
+                        <div class="info">
+                            <div class="button">
+                                <span id="button-info">?</span>
+                            </div>
+                            <div class="info-texto">
+                                <span>Marque <b class="texto">"Recolher em domicílio"</b> caso você aceite ir até a
+                                    residência do cliente para recolher o material a ser coletado.
+                                    <br><br>
+                                    Marque <b class="texto">"Receber no local"</b> se você permite que o cliente vá até
+                                    o seu encontro para
+                                    entregar o material a ser coletado.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="campos-forms">
+                    <label for="descricao">Descrição<span>*</span></label>
+                    <textarea name="descricao" id="descricao" required
+                        placeholder="Digite aqui os materiais que se incluem neste serviço, além de outras informações que achar pertinente."></textarea>
+                </div>
+                <div>
+                    <p><span>*</span> Campos de preenchimento obrigatório.</p>
+                </div>
+                <div id="button-servico">
+                    <button type="submit">Cadastrar serviço</button>
+                </div>
+            </form>
+        </section>
+        <section class="listagem">
+            <div id="card-confirmacao">
+                <div></div>
+                <div id="confirmacao0" class="hidden">
+                    <p>Confirma a exclusão deste serviço? Os dados dele serão perdidos.</p>
+                    <div>
+                        <button type="button" id="editar"
+                            onClick="(() => {document.getElementById('fundo-modal').classList.add('hidden'); document.getElementById('confirmacao0').classList.add('hidden')})()">Cancelar</button>
+                        <button type="button" id="excluir" class="excluir" onclick="excluirServico(0)">Excluir</button>
+                    </div>
+                </div>
+                <div id="confirmacao1" class="hidden">
+                    <p>Confirma a exclusão deste serviço? Os dados dele serão perdidos.</p>
+                    <div>
+                        <button type="button" id="editar"
+                            onClick="(() => {document.getElementById('fundo-modal').classList.add('hidden'); document.getElementById('confirmacao1').classList.add('hidden')})()">Cancelar</button>
+                        <button type="button" id="excluir" class="excluir" onclick="excluirServico(1)">Excluir</button>
+                    </div>
+                </div>
+                <div id="confirmacao2" class="hidden">
+                    <p>Confirma a exclusão deste serviço? Os dados dele serão perdidos.</p>
+                    <div>
+                        <button type="button" id="editar"
+                            onClick="(() => {document.getElementById('fundo-modal').classList.add('hidden'); document.getElementById('confirmacao2').classList.add('hidden')})()">Cancelar</button>
+                        <button type="button" id="excluir" class="excluir" onclick="excluirServico(2)">Excluir</button>
+                    </div>
+                </div>
+                <div id="confirmacao3" class="hidden">
+                    <p>Confirma a exclusão deste serviço? Os dados dele serão perdidos.</p>
+                    <div>
+                        <button type="button" id="editar"
+                            onClick="(() => {document.getElementById('fundo-modal').classList.add('hidden'); document.getElementById('confirmacao3').classList.add('hidden')})()">Cancelar</button>
+                        <button type="button" id="excluir" class="excluir" onclick="excluirServico(3)">Excluir</button>
+                    </div>
+                </div>
+                <div id="confirmacao4" class="hidden">
+                    <p>Confirma a exclusão deste serviço? Os dados dele serão perdidos.</p>
+                    <div>
+                        <button type="button" id="editar"
+                            onClick="(() => {document.getElementById('fundo-modal').classList.add('hidden'); document.getElementById('confirmacao4').classList.add('hidden')})()">Cancelar</button>
+                        <button type="button" id="excluir" class="excluir" onclick="excluirServico(4)">Excluir</button>
+                    </div>
+                </div>
+                <div id="confirmacao5" class="hidden">
+                    <p>Confirma a exclusão deste serviço? Os dados dele serão perdidos.</p>
+                    <div>
+                        <button type="button" id="editar"
+                            onClick="(() => {document.getElementById('fundo-modal').classList.add('hidden'); document.getElementById('confirmacao5').classList.add('hidden')})()">Cancelar</button>
+                        <button type="button" id="excluir" class="excluir" onclick="excluirServico(5)">Excluir</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cards-listagem">
+                <div class="servico hidden" id="servico0">
+                    <span id="categoria_card0"></span>
+
+                    <input type="text" name="horario" id="dia_horario_card0" placeholder="Horário de coletagem"
+                        disabled>
+                    <textarea name="descricao" id="descricao_card0" placeholder="Descrição do serviço"
+                        disabled></textarea>
+                    <div>
+                        <div>
+                            <input type="checkbox" name="entrega" id="recolher_card0" disabled>
+                            <label for="entrega" style="width: 31%;">Recolher em domicílio</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="entrega" id="receber_card0" disabled>
+                            <label for="entrega" style="width: 27%;">Receber no local</label>
+                        </div>
+                    </div>
+
+
+                    <div class="botoes">
+                        <button type="button" class="editar0" onclick="habilitaEdicao(0)">Editar</button>
+                        <button type="button" class="excluir" onclick="abreConfirmacao(0)">Excluir</button>
+                    </div>
+                </div>
+
+                <div class="servico hidden" id="servico1">
+                    <span id="categoria_card1"></span>
+                    <input type="text" name="horario" id="dia_horario_card1" placeholder="Horário de coletagem"
+                        disabled>
+                    <textarea name="descricao" id="descricao_card1" placeholder="Descrição do serviço"
+                        disabled></textarea>
+                    <div>
+                        <div>
+                            <input type="checkbox" name="entrega" id="recolher_card1" disabled>
+                            <label for="entrega" style="width: 31%;">Recolher em domicílio</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="entrega" id="receber_card1" disabled>
+                            <label for="entrega" style="width: 27%;">Receber no local</label>
+                        </div>
+                    </div>
+                    <div class="botoes">
+                        <button type="button" class="editar1" onclick="habilitaEdicao(1)">Editar</button>
+                        <button type="button" class="excluir" onclick="abreConfirmacao(1)">Excluir</button>
+                    </div>
+                </div>
+
+                <div class="servico hidden" id="servico2">
+                    <span id="categoria_card2"></span>
+                    <input type="text" name="horario" id="dia_horario_card2" placeholder="Horário de coletagem"
+                        disabled>
+                    <textarea name="descricao" id="descricao_card2" placeholder="Descrição do serviço"
+                        disabled></textarea>
+                    <div>
+                        <div>
+                            <input type="checkbox" name="entrega" id="recolher_card2" disabled>
+                            <label for="entrega" style="width: 31%;">Recolher em domicílio</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="entrega" id="receber_card2" disabled>
+                            <label for="entrega" style="width: 27%;">Receber no local</label>
+                        </div>
+                    </div>
+                    <div class="botoes">
+                        <button type="button" class="editar2" onclick="habilitaEdicao(2)">Editar</button>
+                        <button type="button" class="excluir" onclick="abreConfirmacao(2)">Excluir</button>
+                    </div>
+                </div>
+
+                <div class="servico hidden" id="servico3">
+                    <span id="categoria_card3"></span>
+                    <input type="text" name="horario" id="dia_horario_card3" placeholder="Horário de coletagem"
+                        disabled>
+                    <textarea name="descricao" id="descricao_card3" placeholder="Descrição do serviço"
+                        disabled></textarea>
+                    <div>
+                        <div>
+                            <input type="checkbox" name="entrega" id="recolher_card3" disabled>
+                            <label for="entrega" style="width: 31%;">Recolher em domicílio</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="entrega" id="receber_card3" disabled>
+                            <label for="entrega" style="width: 27%;">Receber no local</label>
+                        </div>
+                    </div>
+                    <div class="botoes">
+                        <button type="button" class="editar3" onclick="habilitaEdicao(3)">Editar</button>
+                        <button type="button" class="excluir" onclick="abreConfirmacao(3)">Excluir</button>
+                    </div>
+                </div>
+
+                <div class="servico hidden" id="servico4">
+                    <span id="categoria_card4"></span>
+                    <input type="text" name="horario" id="dia_horario_card4" placeholder="Horário de coletagem"
+                        disabled>
+                    <textarea name="descricao" id="descricao_card4" placeholder="Descrição do serviço"
+                        disabled></textarea>
+                    <div>
+                        <div>
+                            <input type="checkbox" name="entrega" id="recolher_card4" disabled>
+                            <label for="entrega" style="width: 31%;">Recolher em domicílio</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="entrega" id="receber_card4" disabled>
+                            <label for="entrega" style="width: 27%;">Receber no local</label>
+                        </div>
+                    </div>
+                    <div class="botoes">
+                        <button type="button" class="editar4" onclick="habilitaEdicao(4)">Editar</button>
+                        <button type="button" class="excluir" onclick="abreConfirmacao(4)">Excluir</button>
+                    </div>
+                </div>
+
+                <div class="servico hidden" id="servico5">
+                    <span id="categoria_card5"></span>
+                    <input type="text" name="horario" id="dia_horario_card5" placeholder="Horário de coletagem"
+                        disabled>
+                    <textarea name="descricao" id="descricao_card5" placeholder="Descrição do serviço"
+                        disabled></textarea>
+                    <div>
+                        <div>
+                            <input type="checkbox" name="entrega" id="recolher_card5" disabled>
+                            <label for="entrega" style="width: 31%;">Recolher em domicílio</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="entrega" id="receber_card5" disabled>
+                            <label for="entrega" style="width: 27%;">Receber no local</label>
+                        </div>
+                    </div>
+                    <div class="botoes">
+                        <button type="button" class="editar5" onclick="habilitaEdicao(5)">Editar</button>
+                        <button type="button" class="excluir" onclick="abreConfirmacao(5)">Excluir</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <div id="fundo-modal" class="hidden"
+        onClick="(() => {document.getElementById('fundo-modal').classList.add('hidden'); document.getElementById('confirmacao0').classList.add('hidden'); document.getElementById('confirmacao1').classList.add('hidden'); document.getElementById('confirmacao2').classList.add('hidden'); document.getElementById('confirmacao3').classList.add('hidden'); document.getElementById('confirmacao4').classList.add('hidden'); document.getElementById('confirmacao5').classList.add('hidden')})()">
+    </div>
+
+
+    <footer class="rodape">
+        <p class="rodape-texto">Recicle.me</p>
+        <img class="rodape-img" src="../logos/logosvg.svg" alt="LogoRecicleME">
+    </footer>
+
+    <script src="../meus_servicos/funcionalidades.js"></script>
+
+</body>
+
+</html>

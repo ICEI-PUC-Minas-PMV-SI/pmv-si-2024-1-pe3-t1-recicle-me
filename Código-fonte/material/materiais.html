@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style-materiais.css">
+    <link rel="shortcut icon" href="../logos/favicon.png" type="image/x-icon">
+    <title>Materiais</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <nav class="cabecalho-menu">
+            <a href="../home/home-cliente.html" class="inicio">Início</a>
+            <a href="../material/materiais.html" style="color: #414B3B;" class="como-descartar">Como <br />Descartar</a>
+            <a href="../minhas_coletas_cliente/minhas-coletas.html" class="como-descartar">Minhas <br />Coletas</a>
+            <a href="../perfis/usuario.html" class="como-descartar">Perfil</a>
+            <a href="../login/login-teste.html" class="login">Sair</a>
+        </nav>
+    </header>
+    <main>
+        <h1 id="titulo-text">Materiais para descarte</h1>
+        <section>
+            <nav class="container-card">
+                <a href="./plastico.html" target="frame" id="button1" class="card">
+                    <h2 class="card-text">PLÁSTICO</h2>
+                    <img src="../imgs/plastico.jpg" alt="imagem de plastico" class="card-image">
+                </a>
+
+                <a href="./vidro.html" target="frame" id="button2" class="card">
+                    <h2 class="card-text">VIDRO</h2>
+                    <img src="../imgs/vidro1.jpg" alt="imagem de vidro" class="card-image">
+                </a>
+
+                <a href="./papel.html" target="frame" id="button3" class="card">
+                    <h2 class="card-text">PAPEL</h2>
+                    <img src="../imgs/papel.jpg" alt="imagem de papel" class="card-image">
+                </a>
+
+                <a href="./metal.html" target="frame" id="button4" class="card">
+                    <h2 class="card-text">METAL</h2>
+                    <img src="../imgs/metal.jpg" alt="imagem de metal" class="card-image">
+                </a>
+
+                <a href="./organico.html" target="frame" id="button5" class="card">
+                    <h2 class="card-text">ORGÂNICO</h2>
+                    <img src="../imgs/organico1.jpg" alt="imagem do organico" class="card-image">
+                </a>
+            </nav>
+            <iframe id="myDiv" class="hidden" name="frame"></iframe>
+        </section>
+    </main>
+    <footer class="rodape">
+        <p class="rodape-texto">Recicle.me</p>
+        <img class="rodape-img" src="../logos/logosvg.svg" alt="LogoRecicleME">
+    </footer>
+    <script>
+        const button1 = document.getElementById("button1");
+        const button2 = document.getElementById("button2");
+        const button3 = document.getElementById("button3");
+        const button4 = document.getElementById("button4");
+        const button5 = document.getElementById("button5");
+        const div = document.getElementById("myDiv");
+
+        button1.addEventListener("click", function () {
+            toggleDiv();
+        });
+
+        button2.addEventListener("click", function () {
+            toggleDiv();
+        });
+
+        button3.addEventListener("click", function () {
+            toggleDiv();
+        });
+
+        button4.addEventListener("click", function () {
+            toggleDiv();
+        });
+
+        button5.addEventListener("click", function () {
+            toggleDiv();
+        });
+
+        function toggleDiv() {
+            if (div.classList.contains("hidden")) {
+                div.classList.remove("hidden");
+                div.classList.add("visible");
+            } else {
+                div.classList.remove("visible");
+                div.classList.add("hidden");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

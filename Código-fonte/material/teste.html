@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bloco {
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .bloco h3 {
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+
+        .bloco p {
+            margin: 5px 0;
+        }
+
+        .inform-coletor,
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            justify-items: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .icon-inform,
+        .icon-contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .icon-inform img,
+        .icon-contact img {
+            width: 24px;
+            height: 24px;
+            margin-bottom: 5px;
+        }
+
+        .button-agenda {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button-agenda a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Added styles */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .bloco h3 {
+            font-weight: bold;
+        }
+
+        .icon-inform,
+        .icon-contact {
+            text-align: center;
+        }
+
+        .icon-inform img,
+        .icon-contact img {
+            margin-bottom: 10px;
+        }
+
+        .button-agenda {
+            margin-top: 20px;
+        }
+
+        .icon-contact {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="bloco bl-conteudo">
+        <h3>MetaRecycle</h3>
+        <p>Reciclar metais para um futuro sustentável, com responsabilidade e inovação.</p>
+        <hr>
+        <div class="inform-coletor">
+            <div class="icon-inform"> <img src="./imagens/home.png" alt="Home">
+                <p>Ponto de coleta</p>
+            </div>
+            <div class="icon-inform"> <img src="./imagens/maps.png" alt="Maps">
+                <p>Barreiro, BH</p>
+            </div>
+            <div class="icon-inform">
+                <img src="./imagens/caminhao.png" alt="#">
+                <p>coleta domiciliar</p>
+            </div>
+        </div>
+        <hr>
+        <div class="contact-info"> </div>
+        <div class="icon-contact"> <img src="./imagens/phone.png" alt="Phone">
+            <p>(31) 3275-4982</p>
+        </div>
+        <div class="icon-contact"> <img src="./imagens/email.png" alt="Email">
+            <p>contato@metarecycle.com</p>
+        </div>
+        <div class="icon-contact"> <img src="./imagens/clock.png" alt="Clock">
+            <p>Seg-Sex: 08:00 - 18:00</p>
+        </div>
+        <hr> <button class="button-agenda"> <a href="../agendar_coleta/agendar-coleta.html">Agendar coleta</a> </button>
+    </div>
+</body>
+</html>

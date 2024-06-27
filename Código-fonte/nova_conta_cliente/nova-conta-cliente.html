@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="nova-conta-cliente.css">
+    <link rel="shortcut icon" href="../logos/favicon.png" type="image/x-icon">
+    <script type="module" src="cadastro.js"></script>
+    <title>Cadastro</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+    </style>
+</head>
+<body>
+    <header class="cabecalho">
+        <nav class="cabecalho-menu">
+            <a href="../home/home.html" class="inicio">Início</a>
+            <a href="../material/materiais.html" class="como-descartar">Como <br />Descartar</a>
+            <a href="../login/login-teste.html" class="login">Entrar</a>
+        </nav>
+    </header>
+
+    <!-- Logo das Folhas -->
+    <img src="../logos/3folhas-transparente.png" alt="logo-folhas" class="logo-folhas1">
+    <img src="../logos/3folhas-transparente.png" alt="logo-folhas" class="logo-folhas2">
+    <!-- Logo dos Detalhes das Folhas-->
+    <img src="../logos/Vector.png" alt="logo-folhas" class="logo-detalhes1">
+    <img src="../logos/Vector.png" alt="logo-folhas" class="logo-detalhes2">
+
+    <main>
+        <p class="txt-nova-conta">Nova <br> Conta</p>
+
+        <div class="container">
+            <div class="opcoes">
+                <div class="opcao-item">
+                  <input type="radio" id="opcaoDescartar" name="opcao" value="descartar">
+                  <label for="opcaoDescartar">Quero descartar meu lixo</label>
+                </div>
+                <div class="opcao-item">
+                  <input type="radio" id="opcaoDivulgar" name="opcao" value="divulgar">
+                  <label for="opcaoDivulgar">Quero divulgar meu serviço</label>
+                </div>
+            </div>
+
+            <form id="formCadastro" class="inputs">
+                <div class="input-container">
+                      <label for="nome">Nome<span>*</span></label>
+                      <input type="text" id="nome" name="nome" placeholder="Nome completo" required>
+                </div>
+
+                <div class="input-container">
+                      <label for="cpf">CPF<span>*</span></label>
+                      <input type="text" id="cpf" name="cpf" placeholder="CPF" required>
+                </div>
+
+                <div class="input-container">
+                      <label for="email">E-mail<span>*</span></label>
+                      <input type="text" id="email" name="email" placeholder="E-mail" required>
+                </div>
+
+                <div class="input-container">
+                    <label for="telefone">Telefone<span>*</span></label>
+                    <input type="text" id="telefone" name="telefone" placeholder="Telefone" required>
+                </div>
+
+                <div class="input-container">
+                      <label for="cidade">Cidade<span>*</span></label>
+                      <input type="text" id="cidade" name="cidade" placeholder="Cidade" required>
+                </div>
+
+                <div class="input-container">
+                      <label for="senha">Senha<span>*</span></label>
+                      <input type="password" id="senha" name="senha" placeholder="Senha" required>
+                </div>
+
+                <div class="input-container">
+                      <label for="confirmarSenha">Confirmar senha<span>*</span></label>
+                      <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirmar senha" required>
+                </div>
+
+                <span class="asterisco">*</span><span class="mensagem">Campos de preenchimento obrigatório. </span>
+            </form>
+
+            <div class="botoes">
+                <button id="btnSalvar" type="submit">Salvar</button>
+                <button id="btnCancelar" type="button">Cancelar</button>
+            </div>
+
+            <div id="popupContainer" class="popupContainer">
+              <div class="popupContent">
+                  <span id="popupMessage"></span>
+                  <button id="btnFecharPopup" onclick="abrirPerfil()">Fechar</button>
+              </div>
+          </div>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <p class="rodape-texto">Recicle.me</p>
+        <img class="rodape-img" src="../logos/logosvg.svg" alt="LogoRecicleME">
+    </footer>
+    <script src="nova-conta-cliente.js"></script>
+
+    <script>document.addEventListener("DOMContentLoaded", function() {
+        const opcaoDescartar = document.getElementById('opcaoDescartar');
+        const opcaoDivulgar = document.getElementById('opcaoDivulgar');
+    
+        // Define a opção "Quero descartar meu lixo" como marcada por padrão ao carregar a página
+        opcaoDescartar.checked = true;
+    
+        opcaoDescartar.addEventListener('change', function() {
+            if (opcaoDescartar.checked) {
+                window.location.href = '../nova_conta_cliente/nova-conta-cliente.html';
+            }
+        });
+    
+        opcaoDivulgar.addEventListener('change', function() {
+            if (opcaoDivulgar.checked) {
+                window.location.href = '../nova_conta_coletor/nova-conta-coletor.html';
+            }
+        });
+    
+        // Verifica se há um estado salvo para os botões de rádio
+        if(localStorage.getItem('opcaoSelecionada')) {
+            const opcaoSelecionada = localStorage.getItem('opcaoSelecionada');
+            document.getElementById(opcaoSelecionada).checked = true;
+        }
+    
+        document.querySelectorAll('input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                localStorage.setItem('opcaoSelecionada', this.id);
+            });
+        });
+    
+        const inputsObrigatorios = document.querySelectorAll('input[required]');
+        const mensagemObrigatorio = document.querySelector('.mensagem-obrigatorio');
+    
+        inputsObrigatorios.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.value.trim() === '') {
+                    mensagemObrigatorio.style.display = 'block';
+                } else {
+                    mensagemObrigatorio.style.display = 'none';
+                }
+            });
+        });
+    });</script>
+    
+</body>
+</html>

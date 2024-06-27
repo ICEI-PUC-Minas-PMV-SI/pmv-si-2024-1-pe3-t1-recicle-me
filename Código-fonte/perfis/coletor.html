@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="/padrao/style.css"> -->
+    <link rel="stylesheet" href="../perfis/style-perfis.css">
+    <link rel="shortcut icon" href="../logos/favicon.png" type="image/x-icon">
+    <title>Perfil</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+    </style>
+
+</head>
+
+<body onload="carregarDados()">
+    <header class="cabecalho">
+        <nav class="cabecalho-menu">
+            <a href="../home/home-coletor.html" class="inicio">Início</a>
+            <a href="../material/materiais-coletor.html" class="como-descartar">Como <br />Descartar</a>
+            <a href="../meus_servicos/coletor.html" class="como-descartar">Meus Serviços</a>
+            <a href="../minhas_coletas/coletor.html" class="como-descartar">Minhas Coletas</a>
+            <a href="../perfis/coletor.html" class="como-descartar" style="color: #414B3B;">Perfil</a>
+            <a href="../login/login-teste.html" class="login">Sair</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="coletor">
+            <div class="conteudo-perfil">
+                <div class="perfil-completo">
+                    <div id="perfil">
+                        <h1>Perfil</h1>
+                        <div id="icone-perfil">
+                            <img src="../imgs/user.png" alt="">
+                        </div>
+                    </div>
+                    <div class="descricao-perfil">
+                        <span>Aqui você pode <b>editar as informações</b> da sua empresa ou do seu negócio pessoal,
+                            <b>alterar sua senha</b> de acesso ao sistema, <b>cadastrar serviços de coleta</b> que você
+                            realiza,
+                            ou ainda, pode excluir a sua conta
+                            permanentemente.</span>
+                    </div>
+                </div>
+                <div id="card-infos">
+                    <div id="formulario">
+                        <fieldset id="infos-pessoais">
+                            <legend>Informações pessoais</legend>
+                            <div class="campos-forms">
+                                <label for="nome">Nome<span>*</span></label>
+                                <input type="text" name="Nome" id="nome" placeholder="Nome da empresa" disabled>
+                            </div>
+                            <div class="campos-forms">
+                                <label for="cnpj">CNPJ<span>*</span></label>
+                                <input type="number" name="CNPJ" id="cnpj" placeholder="CNPJ" disabled>
+                            </div>
+                            <div class="campos-forms">
+                                <label for="email">E-mail<span>*</span></label>
+                                <input type="email" name="E-mail" id="email" placeholder="E-mail" disabled>
+                            </div>
+                            <div class="campos-forms">
+                                <label for="telefone">Telefone<span>*</span></label>
+                                <input type="tel" name="telefone" id="telefone" placeholder="Telefone" disabled>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Endereço</legend>
+                            <div class="endereco">
+                                <div class="campos-forms">
+                                    <label for="rua">Rua/Avenida<span>*</span></label>
+                                    <input type="text" name="rua" id="rua" placeholder="Logradouro" disabled>
+                                </div>
+                                <div style="display: flex;">
+                                    <div class="campos-forms" style="width: 29%; padding-inline-end: 0.8rem;">
+                                        <label for="numero">Nº<span>*</span></label>
+                                        <input type="number" name="numero" id="numero" placeholder="Número" disabled>
+                                    </div>
+                                    <div class="campos-forms" style="width: 70%;">
+                                        <label for="bairro">Bairro<span>*</span></label>
+                                        <input type="text" name="Bairro" id="bairro" placeholder="Bairro" disabled>
+                                    </div>
+                                </div>
+
+                                <div class="campos-forms">
+                                    <label for="cidade">Cidade<span>*</span></label>
+                                    <input type="text" name="Cidade" id="cidade" placeholder="Cidade" disabled>
+                                </div>
+                                <div class="campos-forms">
+                                    <label for="estado">Estado<span>*</span></label>
+                                    <input type="text" name="estado" id="estado" placeholder="estado" disabled>
+                                    <!-- <select name="estado" id="estado" placeholder="Estado">
+                                        <option value="Estado">Selecione...</option>
+                                        <option value="AC">Acre</option>
+                                        <option value="AL">Alagoas</option>
+                                        <option value="AP">Amapá</option>
+                                        <option value="AM">Amazonas</option>
+                                        <option value="BA">Bahia</option>
+                                        <option value="CE">Ceará</option>
+                                        <option value="DF">Distrito Federal</option>
+                                        <option value="ES">Espírito Santo</option>
+                                        <option value="GO">Goiás</option>
+                                        <option value="MA">Maranhão</option>
+                                        <option value="MT">Mato Grosso</option>
+                                        <option value="MS">Mato Grosso do Sul</option>
+                                        <option value="MG">Minas Gerais</option>
+                                        <option value="PA">Pará</option>
+                                        <option value="PB">Paraíba</option>
+                                        <option value="PR">Paraná</option>
+                                        <option value="PE">Pernambuco</option>
+                                        <option value="PI">Piauí</option>
+                                        <option value="RJ">Rio de Janeiro</option>
+                                        <option value="RN">Rio Grande do Norte</option>
+                                        <option value="RS">Rio Grande do Sul</option>
+                                        <option value="RO">Rondônia</option>
+                                        <option value="RR">Roraima</option>
+                                        <option value="SC">Santa Catarina</option>
+                                        <option value="SP">São Paulo</option>
+                                        <option value="SE">Sergipe</option>
+                                        <option value="TO">Tocantins</option>
+                                    </select> -->
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div>
+                        <p><span>*</span> Campos de preenchimento obrigatório.</p>
+                        <button type="button" id="alterar-senha">Alterar senha</button>
+                    </div>
+                    <div class="cadastrar-servico">
+                        <a href="../meus_servicos/coletor.html"><button type="button" id="cadastrar-servico">Cadastrar
+                                Serviço</button></a>
+                    </div>
+                    <div id="botoes-formulario">
+                        <button onclick="habilitaEdicao()" type="button" id="editar">Editar</button>
+                        <button type="button" id="excluir" onclick="abreConfirmacao()">Excluir</button>
+                    </div>
+                </div>
+                <div id="card-confirmacao">
+                    <div></div>
+                    <div id="confirmacao" class="hidden">
+                        <p>Confirma a exclusão da conta? Todos os dados serão perdidos.</p>
+                        <div>
+                            <button type="button" id="editar"
+                                onClick="(() => {document.getElementById('fundo-modal').classList.add('hidden'); document.getElementById('confirmacao').classList.add('hidden')})()">Cancelar</button>
+                            <button onclick="exclusaoDados()" type="button" id="excluir">Excluir</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <p class="rodape-texto">Recicle.me</p>
+        <img class="rodape-img" src="../logos/logosvg.svg" alt="LogoRecicleME">
+    </footer>
+
+    <div id="fundo-modal" class="hidden"
+        onClick="(() => {document.getElementById('fundo-modal').classList.add('hidden'); document.getElementById('confirmacao').classList.add('hidden')})()">
+    </div>
+
+    <script src="../perfis/usuario.js"></script>
+
+    <script>
+        function carregarDados() {
+            const coletorArray = JSON.parse(localStorage.getItem('coletores'));
+
+            if (coletorArray && coletorArray.length > 0) {
+                // Inserir o dado no input
+                document.getElementById("nome").value = coletorArray[0].nome_coletor;
+                document.getElementById("cnpj").value = coletorArray[0].cnpj_coletor;
+                document.getElementById("email").value = coletorArray[0].email_coletor;
+                document.getElementById("telefone").value = coletorArray[0].telefone_coletor;
+                document.getElementById("rua").value = coletorArray[0].logradouro_coletor;
+                document.getElementById("numero").value = coletorArray[0].numero_coletor;
+                document.getElementById("bairro").value = coletorArray[0].bairro_coletor;
+                document.getElementById("cidade").value = coletorArray[0].cidade_coletor;
+                document.getElementById("estado").value = coletorArray[0].estado_coletor;
+                document.getElementById("numero").value = coletorArray[0].numero_coletor;
+            }
+        }
+
+        function habilitaEdicao() {
+            const editarButton = document.getElementById('editar');
+
+            if (editarButton.innerText === "Editar") {
+                document.getElementById('nome').disabled = false;
+                document.getElementById('cnpj').disabled = false;
+                document.getElementById('email').disabled = false;
+                document.getElementById('telefone').disabled = false;
+                document.getElementById('rua').disabled = false;
+                document.getElementById('numero').disabled = false;
+                document.getElementById('bairro').disabled = false;
+                document.getElementById('cidade').disabled = false;
+                document.getElementById('estado').disabled = false;
+                document.getElementById('numero').disabled = false;
+
+                document.querySelector("#editar").innerText = "Salvar";
+
+                document.getElementById('nome').classList.add("modoEdicao");
+                document.getElementById('cnpj').classList.add("modoEdicao");
+                document.getElementById('email').classList.add("modoEdicao");
+                document.getElementById('telefone').classList.add("modoEdicao");
+                document.getElementById('rua').classList.add("modoEdicao");
+                document.getElementById('numero').classList.add("modoEdicao");
+                document.getElementById('bairro').classList.add("modoEdicao");
+                document.getElementById('cidade').classList.add("modoEdicao");
+                document.getElementById('estado').classList.add("modoEdicao");
+                document.getElementById('numero').classList.add("modoEdicao");
+
+                editarButton.addEventListener('click', salvarDados);
+            } else {
+                salvarDados();
+                document.getElementById('nome').disabled = true;
+                document.getElementById('cnpj').disabled = true;
+                document.getElementById('email').disabled = true;
+                document.getElementById('telefone').disabled = true;
+                document.getElementById('rua').disabled = true;
+                document.getElementById('numero').disabled = true;
+                document.getElementById('bairro').disabled = true;
+                document.getElementById('cidade').disabled = true;
+                document.getElementById('estado').disabled = true;
+                document.getElementById('numero').disabled = true;
+
+                document.querySelector("#editar").innerText = "Editar";
+
+                document.getElementById('nome').classList.remove("modoEdicao");
+                document.getElementById('cnpj').classList.remove("modoEdicao");
+                document.getElementById('email').classList.remove("modoEdicao");
+                document.getElementById('telefone').classList.remove("modoEdicao");
+                document.getElementById('rua').classList.remove("modoEdicao");
+                document.getElementById('numero').classList.remove("modoEdicao");
+                document.getElementById('bairro').classList.remove("modoEdicao");
+                document.getElementById('cidade').classList.remove("modoEdicao");
+                document.getElementById('estado').classList.remove("modoEdicao");
+                document.getElementById('numero').classList.remove("modoEdicao");
+            }
+        }
+
+        function exclusaoDados() {
+            localStorage.removeItem("coletores");
+            alert("Conta excluída com sucesso!");
+            window.location.href = '../login/login-teste.html';
+        }
+
+        function salvarDados() {
+
+            var nome_coletor = document.getElementById("nome").value;
+            var cnpj_coletor = document.getElementById("cnpj").value;
+            var email_coletor = document.getElementById("email").value;
+            var telefone_coletor = document.getElementById("telefone").value;
+            var logradouro_coletor = document.getElementById("rua").value;
+            var numero_coletor = document.getElementById("numero").value;
+            var bairro_coletor = document.getElementById("bairro").value;
+            var cidade_coletor = document.getElementById("cidade").value;
+            var estado_coletor = document.getElementById("estado").value;
+
+            let coletores = new Array();
+
+            if (localStorage.hasOwnProperty("coletores")) {
+                coletores = JSON.parse(localStorage.getItem("coletores"));
+            }
+
+            coletores.push({ nome_coletor, cnpj_coletor, email_coletor, telefone_coletor, logradouro_coletor, numero_coletor, bairro_coletor, cidade_coletor, estado_coletor });
+
+            localStorage.setItem("coletores", JSON.stringify(coletores));
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,283 @@
+@charset "UTF-8";
+
+
+:root {
+    --cor1: #6D8F64;
+    --cor2: #02835E;
+    --cor3: #02935E;
+    --cor4: #03035E;
+    --cor5: #03135E;
+    --cor6: #52724A;
+    
+    --fonte-padrão: arial;
+    --fonte-destaque: arial;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    background-color: #fafafa;
+}
+
+/* barra de menu */
+.cabecalho{
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+}
+
+.cabecalho-menu{
+    display: flex;
+    justify-content: space-around;
+    gap: 35px;
+    align-items: center;
+    height: 40px;
+    width: 720px;
+    background-color: var(--cor1);
+    border-radius: 15px;
+}
+
+.cabecalho-menu a {
+    text-decoration: none;
+}
+
+.inicio{
+    font-size: 14px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-family: "Playfair Display", serif;
+    padding-left: 5px;
+}
+
+.como-descartar{
+    text-align: center;
+     font-size: 14px;
+     color: #FFFFFF;
+     font-weight: 600;
+     font-family: "Playfair Display", serif;
+
+}
+
+.login{
+    padding-left: 262px;
+    font-size: 14px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-family: "Playfair Display", serif;
+    padding-right: 5px;
+}
+
+
+/*conteudo */
+
+section{
+    margin: 2rem 15rem;
+}
+
+section#coletor{
+    margin: 0 5rem 6rem;
+}
+
+.conteudo-perfil {
+    display: flex;
+}
+.perfil-completo {
+    width: 30%; 
+}
+
+#perfil {
+    display: flex;
+    font-family: "Playfair Display", serif;
+}
+
+#icone-perfil {
+    height: 3.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.descricao-perfil {
+    padding: 0.8rem;
+    margin: 2rem 5rem 0 0;
+    background-color: #e6e2e2;
+    border-radius: 10px;
+}
+
+#card-infos {
+    padding: 1.7rem 2rem;
+    margin: 0.5rem;
+    background: #C0C0C0;
+    border-radius: 10px;
+    width: 40%;
+}
+
+#formulario {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.5rem;
+}
+
+fieldset {
+    padding: 1rem;
+    border: 1px solid rgb(168, 166, 166);
+}
+
+fieldset#infos-pessoais {
+    margin-bottom: 1rem;
+}
+
+input, select{
+    background: rgb(109, 143, 100, .56);
+    border: none;
+    border-radius: 10px;
+    height: 30px;
+    margin: 0.5rem 0 0.5rem 0.3rem;
+    padding-inline: 0.6rem;
+    text-align: left;
+    width: 100%;
+}
+
+input::placeholder {
+    color: #D9D9D9;
+    text-align: center;
+}
+
+button#cadastrar-servico {
+    background-color: #414B3B;
+    border-radius: 10px;
+    border: none;
+    padding: 0.5rem 1rem;
+}
+
+.cadastrar-servico, .endereco {
+    text-align: center;
+}
+
+div#formulario+div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7rem 0.7rem 1rem;
+}
+
+button#alterar-senha {
+    background-color: transparent;
+    border: none;
+    color: rgb(248, 0, 0, .8);
+}
+
+#botoes-formulario {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    padding-inline: 2rem;
+}
+
+button {
+    color: #D9D9D9;
+    border-radius: 5px;
+    padding: 0.3rem;
+    height: 1.8rem;
+    cursor: pointer;
+}
+
+button#editar, button.editar {
+    background: var(--cor6);
+    border: 1px solid var(--cor6);
+}
+
+button#excluir, button.excluir {
+    background: #983939;
+    border: 1px solid #983939;
+    margin-left: 1rem;
+}
+
+#card-confirmacao {
+    margin-bottom: 0.5rem;
+    width: 30%;
+}
+
+.hidden {
+    display: none;
+}
+
+#confirmacao {
+    width: 70%;
+    background: #c0c0c0;
+    color: rgb(248, 0, 0, .8);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-left: 3rem;
+    position: relative;
+    top: 70%;
+    z-index: 2;
+    font-weight: 700;
+}
+
+#confirmacao > div {
+    padding-top: .7rem;
+    margin-inline: 1.3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.campos-forms {
+    display: flex;
+    align-items: center;
+}
+
+.campos-forms label span, legend span, p span, #formulario label span{
+    color: red;
+}
+
+/*rodape */
+.rodape{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor1);
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+    height: 40px; 
+}
+
+.rodape-texto{
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-family: "Playfair Display", serif;
+}
+
+.rodape-img{
+    display: flex;
+    align-self:center;
+    position:absolute;
+    padding-bottom: 5.7%;
+    width: 40px;
+    height: 35px;
+}
+
+#fundo-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+   /* backdrop-filter: blur(3px);*/
+    z-index: 1;
+}
+
+/* Tela "Minhas coletas" do coletor */
+
+#cards {
+    font-family: var(--fonte-padrão);
+}

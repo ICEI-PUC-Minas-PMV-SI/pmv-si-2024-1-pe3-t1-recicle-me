@@ -1,0 +1,330 @@
+@charset "UTF-8";
+
+:root {
+    --cor1: #6D8F64;
+    --cor2: #02835E;
+    --cor3: #02935E;
+    --cor4: #03035E;
+    --cor5: #03135E;
+    
+    --fonte-padrão: arial;
+    --fonte-destaque: arial;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: #FAFAFA;
+
+}
+
+/* barra de menu */
+.cabecalho{
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+
+
+}
+
+.cabecalho-menu{
+    display: flex;
+    justify-content: space-around;
+    gap: 35px;
+    align-items: center;
+    height: 40px;
+    width: 720px;
+    background-color: var(--cor1);
+    border-radius: 15px;
+}
+
+.inicio{
+    font-size: 14px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-family: "Playfair Display", serif;
+    padding-left: 5px;
+}
+
+.como-descartar{
+    text-align: center;
+     font-size: 14px;
+     color: #FFFFFF;
+     font-weight: 600;
+     font-family: "Playfair Display", serif;
+
+}
+
+.login{
+    padding-left: 480px;
+    font-size: 14px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-family: "Playfair Display", serif;
+    padding-right: 5px;
+}
+
+
+/*conteudo */
+
+.conteudo{
+    min-height: calc(100vh - 40px);
+    overflow: auto;
+}
+/*.conteudo-retangulo{
+    
+}*/
+
+.container-pai {
+    display: flex; /*Define o container-pai como um flex container*/
+    /* justify-content: space-between; Espaço entre os filhos (containers) */
+    margin: 4% auto; /* Centraliza o container pai na página */
+    justify-content: center;
+}
+
+.container-descarte-certo{
+    width: 350px; 
+    height: 400px;
+    background-color: #C0C0C0;
+    border: 1px solid #ccc; 
+    text-align: left; 
+    display: flex;
+    justify-content: center; 
+    position: relative; 
+}
+
+.container-descarte-certo {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.txt-descarte-certo {
+    position: absolute; /* Define o posicionamento absoluto */
+    text-align: center;
+    margin-top: 10px;
+    color: #414B3B;
+    font-size: 23px;
+    letter-spacing: -1px;
+}
+
+.logo-descarte-certo {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 88px; /* Largura desejada da imagem */
+    height: 74px; /* Altura desejada da imagem */
+}
+
+.txt-logo {
+    position: absolute; /* Permite posicionamento absoluto em relação ao container pai */
+    bottom: 40%; /* Alinha o texto ao final do container pai */
+    left: 50%; /* Alinha o texto ao centro horizontalmente */
+    transform: translateX(-50%); /* Move o texto 50% do seu próprio tamanho para a esquerda para centralizá-lo */
+    text-align: center; /* Alinha o texto ao centro */
+    color: #626262;
+    font-size: 23px;
+    letter-spacing: -1px;
+}
+
+.txt-frase{
+    position: absolute; /* Permite posicionamento absoluto em relação ao container pai */
+    bottom: 5px; /* Alinha o texto ao final do container pai */
+    left: 50%; /* Alinha o texto ao centro horizontalmente */
+    transform: translateX(-50%); /* Move o texto 50% do seu próprio tamanho para a esquerda para centralizá-lo */
+    text-align: center; /* Alinha o texto ao centro */
+    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+    font-size: 22px;
+    color: #414B3B;
+    letter-spacing: -1px;
+}
+
+.container-login {
+    width: 350px; 
+    height: 400px; 
+    background-color: rgba(102, 119, 106, 0.6);
+    border: 1px solid #ccc; 
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.container-login {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.container-login .email {
+    display: block;
+    width: 224px;
+    height: 35px;
+    margin: 20% auto 20px; 
+    background-color: #848484;
+    color: #FFFFFF;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.container-login .senha {
+    display: block;
+    width: 224px;
+    height: 35px;
+    margin: 20px auto 20px;
+    background-color: #848484;
+    color: #FFFFFF; 
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.botao-login {
+    width: 117px;
+    height: 20px;
+    margin-top: 20px; 
+    background-color: #52724A;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: rgba(82, 114, 74, 1);
+}
+
+.botao-login:hover {
+    background-color: #5c774e;
+}
+
+.esqueci-senha {
+    margin-top: 10px; 
+    font-size: 16px;
+    color: #F80000;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.esqueci-senha:hover {
+    text-decoration: underline; 
+}
+
+.container-login .email::placeholder {
+    color: #FFFFFF; 
+}
+
+.container-login .senha::placeholder {
+    color: #FFFFFF; 
+}
+
+.nao-possuo-conta {
+    margin-top: auto; 
+    font-size: 16px;
+    color: black;
+    cursor: pointer;
+    display: block; 
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.nao-possuo-conta:hover {
+    text-decoration: underline; 
+}
+
+.logo-folhas1 {
+    width: 160px;
+    height: auto;
+    top: 15%;
+    left: 45%;
+    position:absolute;
+    z-index: -1;
+    opacity: 0.6;
+    /* Ajuste a posição conforme necessário */
+}
+
+.logo-folhas2 {
+    width: 160px;
+    height: auto;
+    top: 40%;
+    left: 63%;
+    position:absolute;
+    z-index: -1;
+    opacity: 0.6;
+    /* Ajuste a posição conforme necessário */
+}
+
+.logo-folhas3 {
+    width: 160px;
+    height: auto;
+    top: 65%;
+    left: 50%;
+    position:absolute;
+    z-index: -1;
+    opacity: 0.6;
+    /* Ajuste a posição conforme necessário */
+}
+
+.logo-detalhes1 {
+    width: 118px;
+    height: auto;
+    top: 22%;
+    left: 50%;
+    position:absolute;
+    z-index: -1;
+    /* Ajuste a posição conforme necessário */
+}
+
+.logo-detalhes2 {
+    width: 118px;
+    height: auto;
+    top: 47%;
+    left: 68%;
+    position:absolute;
+    z-index: -1;
+    /* Ajuste a posição conforme necessário */
+}
+
+.logo-detalhes3 {
+    width: 118px;
+    height: auto;
+    top: 72%;
+    left: 55%;
+    position:absolute;
+    z-index: -1;
+    /* Ajuste a posição conforme necessário */
+}
+
+
+
+/*rodape */
+.rodape{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor1);
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+    height: 40px; 
+}
+
+.rodape-texto{
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-family: "Playfair Display", serif;
+}
+
+.rodape-img{
+    display: flex;
+    align-self:center;
+    position:absolute;
+    padding-bottom: 5.7%;
+    width: 40px;
+    height: 35px;
+}

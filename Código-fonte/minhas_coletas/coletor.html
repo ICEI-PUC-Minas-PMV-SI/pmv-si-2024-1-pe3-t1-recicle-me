@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="/padrao/style.css"> -->
+    <link rel="stylesheet" href="../perfis/style-perfis.css">
+    <link rel="stylesheet" href="../minhas_coletas/styles/style-minhas-coletas.css">
+    <script src="../minhas_coletas/src/cardColetas.js" defer></script>
+    <link rel="shortcut icon" href="../logos/favicon.png" type="image/x-icon">
+    <title>Minhas Coletas</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+    </style>
+
+</head>
+
+<body>
+    <header class="cabecalho">
+        <nav class="cabecalho-menu">
+            <a href="../home/home-coletor.html" class="inicio">Início</a>
+            <a href="../material/materiais-coletor.html" class="como-descartar">Como <br />Descartar</a>
+            <a href="../meus_servicos/coletor.html" class="como-descartar">Meus Serviços</a>
+            <a href="../minhas_coletas/coletor.html" class="como-descartar" style="color: #414B3B;">Minhas Coletas</a>
+            <a href="../perfis/coletor.html" class="como-descartar">Perfil</a>
+            <a href="../login/login-teste.html" class="login">Sair</a>
+        </nav>
+
+    </header>
+
+    <main>
+        <section>
+            <div class="conteudo-minhas-coletas">
+                <div id="perfil">
+                    <h1>Minhas Coletas</h1>
+                    <div id="icone-perfil">
+                        <img src="../imgs/coleta.png" alt="">
+                    </div>
+                </div>
+                <div id="cards">
+                    <!-- <div class="card-info">
+                        <div class="tempo">
+                            <span id="data">26/02/2024</span>
+                            <span id="horario">9:00</span>
+                        </div>
+                        <div class="informacoes">
+                            <span id="nomeCliente">Carlos Los</span>
+                            <span id="tipoEntrega">Coleta em casa</span>
+                            <span id="local">Rua Los Angeles, 27, Savassi, BH-MG</span>
+
+                            <div class="status-coleta">
+                                <select name="status" id="status">
+                                    <option value="pendente">Pendente</option>
+                                    <option value="coletado">Coletado</option>
+                                    <option value="entregue">Entregue</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <span id="categoria">VIDRO</span>
+                        <div>
+                            <div class="img-reciclagem">
+                                <img src="../imgs/simbolo-reciclagem.png" alt="">
+                            </div>
+                            <div class="img-categoria">
+                                <img src="../imgs/vidros.jpg" alt="">
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <card-coletas
+                    data="26/02/2024"
+                    horario="9:00"
+                    nome="Carlos Los"
+                    tipoEntrega="Coleta em casa"
+                    local="Rua Los Angeles, 27, Savassi, BH-MG"
+
+                    categoria="Vidro"
+                    foto="../imgs/vidros.jpg">
+                    </card-coletas>
+
+                    <card-coletas
+                    data="20/02/2024"
+                    horario="11:00"
+                    nome="Maria Joaquina"
+                    tipoEntrega="Coleta em casa"
+                    local="Rua Pedro de Assis, 99, Prado, BH-MG"
+
+                    categoria="Vidro"
+                    foto="../imgs/vidros.jpg">
+                    </card-coletas>
+
+                    <card-coletas
+                    data="19/02/2024"
+                    horario="15:00"
+                    nome="Joaquim Liu"
+                    tipoEntrega="Entrega no local"
+                    local="Rua Sebastião, 102, Glória, BH-MG"
+
+                    categoria="Vidro"
+                    foto="../imgs/vidros.jpg">
+                    </card-coletas>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <p class="rodape-texto">Recicle.me</p>
+        <img class="rodape-img" src="../logos/logosvg.svg" alt="LogoRecicleME">
+    </footer>
+</body>
+
+</html>

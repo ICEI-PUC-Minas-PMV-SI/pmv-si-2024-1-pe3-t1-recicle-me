@@ -1,0 +1,471 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Inter';
+    src: url('caminho/para/sua/fonte/inter-medium.woff2') format('woff2'); 
+    font-weight: 500; 
+    font-style: normal;
+}
+
+:root {
+    --cor1: #6D8F64;
+    --cor2: #02835E;
+    --cor3: #02935E;
+    --cor4: #03035E;
+    --cor5: #03135E;
+    --cor6: #fafafa;;
+    
+    --fonte-padrão: arial;
+    --fonte-destaque: arial;
+    background-color: var(--cor6);
+    margin-bottom: 100px;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body
+/* barra de menu */
+.cabecalho{
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+}
+
+.cabecalho-menu{
+    display: flex;
+    justify-content: start;
+    gap: 35px;
+    align-items: center;
+    height: 40px;
+    width: 720px;
+    background-color: var(--cor1);
+    border-radius: 15px;
+    gap: 50px;
+}
+
+.cabecalho-menu a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+.inicio{
+    font-size: 14px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-family: "Playfair Display", serif;
+    padding-left: 15px;
+}
+
+.como-descartar{
+    text-align: center;
+    font-size: 14px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-family: "Playfair Display", serif;
+    position: relative;
+    left: 20px;
+}
+
+.login {
+    display: flex;
+    justify-content: end;
+    padding-left: 10px;
+    position: relative;
+    left: 135px;
+    font-size: 14px;
+    color: #FFFFFF;
+    font-family: "Playfair Display", serif;
+    padding-right: 5px;
+}
+
+
+/*conteudo */
+
+.conteudo{
+    min-height: calc(100vh - 40px);
+    overflow: auto;
+}
+
+.espaço {
+    position: relative;
+}
+
+.agendar-coleta-logo {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    padding-left: 23px;
+    font-size: 34px;
+    font-family: "Playfair Display", serif;
+    color: #414B3B;
+}
+
+.agendar-coleta-logo p {
+    font-weight: 600;
+
+}
+
+.caixa1 {
+    position: relative;
+    top: 50%;
+    left: calc(50% - 258.5px); /* Metade da largura do elemento */
+    width: 517px;
+    height: 515px;
+    background-color: rgba(65, 75, 59, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.numero-coleta {
+    display: flex;
+    justify-content: end;
+    position: relative;
+    left: 30px;
+}
+
+.formulario {
+    position: absolute;
+    left: 58px;
+    top: 40px; 
+    right: 131px;
+    bottom: 412px;
+}
+
+.linha {
+    margin-bottom: 10px;
+}
+
+
+label {
+    position: relative;
+    left: -30px;
+    color: var(--cor6);
+    font-size: 14px;
+    bottom: px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+
+#nome::placeholder {
+    text-align: center;
+    color: rgba(17, 15, 15, 1)
+}
+
+#nome {
+    background-color: rgba(202, 202, 202, 1);
+}
+
+#coletor {
+    background-color: rgba(202, 202, 202, 1);
+}
+
+#coletor::placeholder {
+    text-align: center;
+    color: rgba(17, 15, 15, 1);
+
+}
+
+input[type="text"] {
+    width: 330px;
+    height: 31px;
+    border-radius: 10px;
+    padding: 0 15px;
+    font-size: 16px;
+    background-color: var(--cor6);
+    border: 2px solid var(--cor6);
+    position: relative;
+    top: 5px;
+    left: 2px;
+}
+
+#local {
+    position: relative;
+    top: 12px;
+    height: 60px;
+}
+
+.input-date {
+    position: relative;
+    top: 10px;
+    left: 30px;
+}
+
+.input-custom {
+    width: 330px; 
+    height: 31px; 
+    border: 2px solid var(--cor6); 
+    border-radius: 10px; 
+    background-color: var(--cor6);
+    padding: 0 15px; 
+    font-size: 16px;
+    color: #000; 
+    appearance: none; 
+}
+
+.entrega-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.entrega-btn {
+    width: 65px; 
+    height: 30px; 
+    border: none; 
+    border-radius: 10px; 
+    margin-right: 10px;
+    cursor: pointer; 
+    position: relative;
+    top: 5px;
+    transition-duration: 0.01s; 
+    box-shadow: 0 4px #999;
+}
+
+.recolher-btn {
+    width: 65px; 
+    height: 30px; 
+    border: none; 
+    border-radius: 10px; 
+    margin-right: 10px;
+    cursor: pointer; 
+    position: relative;
+    top: 5px;
+    transition-duration: 0.01s; 
+    box-shadow: 0 4px #999;
+}
+
+.ativo {
+    box-shadow: 0 1px #666;
+    transform: translateY(4px);
+}
+
+#recolher-btn {
+    background-color: var(--cor6); 
+}
+
+#entregar-btn {
+    background-color: rgb(98, 98, 98);
+    color: var(--cor6);
+}
+
+#recolher-btn:active {
+    background-color: rgb(175, 175, 175);
+    box-shadow: 0 1px #666;
+    transform: translateY(4px);
+}
+
+#entregar-btn:active {
+    background-color: rgba(87, 87, 87);
+    box-shadow: 0 1px #666;
+    transform: translateY(4px);
+}
+
+ 
+.entrega-btn:focus {
+    outline: none; 
+}
+
+.entrega-btn:active {
+    background-color: #999; 
+}
+
+.local {
+    position: relative;
+    top: 10px;
+}
+
+.agendar-cancelar-buttons {
+    display: flex;
+    justify-content: end;
+}
+
+.agendar-btn {
+    width: 68px; 
+    height: 31px; 
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer; 
+    position: relative;
+    top: 25px;
+    left: 33%;
+}
+
+#agendar-btn {
+    background-color: rgb(82, 114, 74);
+    color: var(--cor6);
+}
+
+#cancelar-btn {
+    background-color: #983939;
+    color: var(--cor6);
+}
+
+/*rodape */
+.rodape{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor1);
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+    height: 40px; 
+}
+
+.rodape-texto{
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-family: "Playfair Display", serif;
+}
+
+.rodape-img{
+    display: flex;
+    align-self:center;
+    position:absolute;
+    padding-bottom: 5.7%;
+    width: 40px;
+    height: 35px;
+}
+
+.vermelho {
+    color: red;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    width: 230px;
+    background-color: var(--cor6);
+    color: rgba(88, 82, 82, 1);
+    border-radius: 6px;
+    padding: 5px;
+    padding-left: 5px;
+    position: absolute;
+    top: 283px;
+    left: 50%;
+    border: 1px solid black;
+}
+
+.tooltiptext h1 {
+    font-size: 11px;
+    text-align: center;
+    font-family: "Playfair Display", serif;
+}
+
+.tooltiptext h2, h3 {
+    font-size: 10px;
+    font-family: "Playfair Display", serif;
+}
+
+.tooltip p {
+    width: 20px;
+    height: 20px;
+    background-color: var(--cor6);
+    position: absolute;
+    left: 41%;
+    display: flex;
+    justify-content: center;
+    top: 336%;
+    font-family: "Playfair Display", serif;
+    cursor: pointer; 
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -4px;
+    border-radius: 5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+  }
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  .obrigatorio {
+    font-family: 'Inter', sans-serif;
+    color: var(--cor6);
+    position: absolute;
+    top: 450%;
+    font-size: 14px;
+  }
+
+
+.popup {
+    position: fixed;
+    border: solid 1px black;
+    width: 201px;
+    height: 129px;
+    left: 45%;
+    top: 25%;
+    display: none;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+}
+
+.popup h1 {
+    font-size: 16px;
+    justify-content: center;
+    display: flex;
+}
+
+.popup-btn {
+    display: flex;
+    justify-content: end;
+}
+
+.btn-editar {
+    appearance: none;
+    border-radius: 10px;
+    width: 53px;
+    height: 24px;
+    background-color: rgba(184, 187, 28, 1);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    top: 15px;
+    left: -5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+}
+
+.btn-confirmar {
+    appearance: none;
+    border-radius: 10px;
+    width: 73px;
+    height: 24px;
+    background-color: rgba(135, 199, 92, 1);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    top: 15px;
+    left: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+}
+
+.cover {
+    background-color:black;
+    width:100%;
+    height:100%;
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+}
+

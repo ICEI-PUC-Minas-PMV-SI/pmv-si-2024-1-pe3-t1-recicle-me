@@ -1,0 +1,197 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root {
+    --cor1: #6D8F64;
+    --cor2: #02835E;
+    --cor3: #02935E;
+    --cor4: #03035E;
+    --cor5: #03135E;
+    --cor6: #fafafa;
+    
+    --fonte-padrão: arial;
+    --fonte-destaque: arial;
+    background-color: var(--cor6);
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+/* barra de menu */
+.cabecalho{
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+}
+
+.cabecalho-menu{
+    display: flex;
+    justify-content: start;
+    gap: 35px;
+    align-items: center;
+    height: 40px;
+    width: 720px;
+    background-color: var(--cor1);
+    border-radius: 15px;
+    gap: 50px;
+}
+
+.cabecalho-menu a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+.inicio{
+    font-size: 14px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-family: "Playfair Display", serif;
+    padding-left: 15px;
+}
+
+.como-descartar{
+    text-align: center;
+    font-size: 14px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-family: "Playfair Display", serif;
+    position: relative;
+    left: 20px;
+}
+
+.login {
+    display: flex;
+    justify-content: end;
+    padding-left: 10px;
+    position: relative;
+    left: 250px;
+    font-size: 14px;
+    color: #FFFFFF;
+    font-family: "Playfair Display", serif;
+    padding-right: 5px;
+}
+
+/*rodape */
+.rodape{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor1);
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+    height: 40px; 
+}
+
+.rodape-texto{
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-family: "Playfair Display", serif;
+}
+
+.rodape-img{
+    display: flex;
+    align-self:center;
+    position:absolute;
+    padding-bottom: 5.7%;
+    width: 40px;
+    height: 35px;
+}
+
+
+/*conteudo */
+
+.conteudo {
+    min-height: calc(100vh - 40px);
+    overflow: auto;
+}
+
+.conteudo-minhas-coletas {
+    margin: 1rem 3rem 5rem;
+}
+
+#coletas {
+    width: 20%;
+    display: flex;
+    font-size: 1.6rem;
+    font-family: "Playfair Display", serif;
+}
+
+#icone-coleta {
+    height: 5.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-left: 10px;
+}
+
+
+.conteudo-coleta1 {
+    width: 154px;
+    height: 423px;
+    background-color: rgba(178, 175, 88, 1);
+    border-radius: 10px;
+    margin-left: 10%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 35.5%;
+}
+
+.conteudo-caixa {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+.hora-conteudo {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.empresa {
+    font-size: 14px;
+    padding-top: 21px;
+    font-weight: medium;
+    color: rgba(217, 217, 217, 1);
+}
+
+.local-coleta {
+    font-size: 14px;
+    padding-top: 25px;
+    color: rgba(217, 217, 217, 1);
+    font-weight: medium;
+}
+
+.numeracao {
+    font-size: 12px;
+    font-weight: medium;
+    padding-top: 40px;
+}
+
+.validacao {
+    font-size: 12px;
+    font-weight: bold;
+    color: rgba(65, 75, 59, 1);
+}
+
+.material {
+    font-size: 20px;
+    font-weight: medium;
+    font-family: "Playfair Display", serif;
+    text-transform: uppercase;
+    padding-top: 50%;
+}
+
+.imagem-coleta {
+    width: 154px;
+    height: 110px;
+    padding-top: 5%;
+}

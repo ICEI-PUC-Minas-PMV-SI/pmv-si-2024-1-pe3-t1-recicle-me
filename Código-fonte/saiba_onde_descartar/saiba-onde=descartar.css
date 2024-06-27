@@ -1,0 +1,240 @@
+@charset "UTF-8";
+
+
+:root {
+    --cor1: #6D8F64;
+    --cor2: #02835E;
+    --cor3: #02935E;
+    --cor4: #03035E;
+    --cor5: #03135E;
+    
+    --fonte-padrão: arial;
+    --fonte-destaque: arial;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+/* tag para tirar decoracao da ancora */
+
+#link-texto{
+    text-decoration: none;
+}
+
+/* barra de menu */
+.cabecalho{
+    display: flex;
+    justify-content: center;
+    padding:5%;
+    background-color: #FFFFFF;
+}
+
+.cabecalho-menu{
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    align-items: center;
+    min-height: 40px;
+    min-width: 720px;
+    background-color: var(--cor1);
+    border-radius: 15px;
+}
+
+.inicio{
+    font-size: 14px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-family: "Playfair Display", serif;
+    padding-left: 5px;
+}
+
+.como-descartar{
+    text-align: center;
+     font-size: 14px;
+     color: #FFFFFF;
+     font-weight: 600;
+     font-family: "Playfair Display", serif;
+
+}
+
+.login{
+    padding-left: 480px;
+    font-size: 14px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-family: "Playfair Display", serif;
+    padding-right: 5px;
+}
+
+/*conteudo */
+
+
+
+.conteudo{
+    min-height: 100vh;
+    overflow: scroll;
+}
+
+h3, h2{
+    font-size: 17px;
+    color: #49534B;
+    font-weight: 900;
+    font-family: "Playfair Display", serif;
+}
+
+.titulo-onde-descartar{
+    padding-top: 2rem;
+    padding-left: 20rem;
+    font-size: 17px;
+}
+
+.conteiner1{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    padding-left: 20rem;
+
+}
+
+.conteudo1{
+    font-size: 14px;
+    /* color: #49534ba1; */
+    font-weight: 300;
+    font-family: "inter", serif;
+}
+
+.conteudo2{
+    padding-top: 2rem;
+}
+
+.titulo-oferecemos{
+    padding-bottom: 1rem;
+}
+.lista-oferecemos{
+    font-size: 14px;
+    /* color: #49534ba1; */
+    font-weight: 300;
+    font-family: "inter", serif;
+
+}
+
+.conteudo3{
+    padding-top: 1rem;
+    font-size: 14px;
+    /* color: #49534ba1; */
+    font-weight: 300;
+    font-family: "inter", serif;
+}
+
+.conteudo4{
+padding-top: 4rem;
+padding-bottom: 1rem;
+padding-right: 5rem;
+align-self: flex-end;
+}
+
+.logo-folhas1 {
+    width: 176px;
+    height: auto;
+    top: 70%;
+    right: 18%;
+    position:absolute;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+.logo-detalhes1 {
+    width: 139px;
+    height: auto;
+    top: 70%;
+    right: 15%;
+    position:absolute;
+    z-index: -1;
+    opacity: 0.2;
+}
+
+.collapsible {
+  background-color: #49534bc7;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 50%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+    font-size: 14px;
+    /* color: #49534ba1; */
+    font-weight: 300;
+    font-family: "inter", serif;
+    padding: 0 18px;
+    max-height: 0;
+    width: 46%;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+}
+#localize {
+    font-size: 14px;
+    color: #49534bbd;
+    font-weight: 300;
+    font-family: "inter", serif;
+    border: none;
+    border-radius: 15%;
+    background-color: rgba(128, 128, 128, 0.315);
+    transition-duration: 0.4s;
+}
+
+#localize:hover {
+  background-color: #49534bd3;
+  border-radius: 15%;
+  border: none;
+  color: white;
+}
+
+
+/*rodape */
+.rodape{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position:fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5rem;
+  width: 100%;
+  background-color: var(--cor1);
+
+    
+    
+}
+
+.rodape-texto{
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-family: "Playfair Display", serif;
+}
+
+.rodape-img{
+    display: flex;
+    align-self:center;
+    position:absolute;
+    padding-bottom: 4.9%;
+    width: 40px;
+    height: 35px;
+}
